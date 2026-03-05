@@ -1,6 +1,6 @@
 # DevilConnection_chinese_dirty_text
-古今狐白日语社 恶魔连结_简体中文汉化补丁Ver 1.0.1 二次修改文件
-来源： https://www.bilibili.com/video/BV1MdiuBYEud
+古今狐白日语社 恶魔连结_简体中文汉化补丁Ver 1.0.1 二次修改文件<br>
+来源: https://www.bilibili.com/video/BV1MdiuBYEud
 合并ver 1.00的粗鄙之语<br>
 轻微修复bug(内容来自公开和半公开信息)<br>
 <br>
