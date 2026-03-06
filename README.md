@@ -16,7 +16,7 @@
 <br>
 下载页面 https://github.com/rainchery/DevilConnection_cn_dirty_txt/releases
 <br>
-加载方法请查看 https://github.com/shouennyou/DevilConnection_ModLoader/releases
+加载方法请查看 https://github.com/shouennyou/DevilConnection_ModLoader
 <br>
 个人行为，不承担二次修改责任<br>
 <br>
