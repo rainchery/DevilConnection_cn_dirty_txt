@@ -7,7 +7,6 @@
 <br>
 仅适用Ver 1.0.1，如果后续汉化补丁更新，本内容将失去时效性<br>
 <br>
-<br>
 由于汉化补丁未推出前，少数人使用机器翻译、AI翻译， <br>
 自动过滤了原文粗鄙之语，一定程度美化了角色 <br>
 <br>
@@ -15,9 +14,11 @@
 得知Ver 1.0.1负优化消息，很多人感到不满<br>
 沉默多数人 不该为少数人偏执错误认知 付出代价<br>
 <br>
-加载方法请查看 https://github.com/shouennyou/DevilConnection_ModLoader
+下载页面 https://github.com/rainchery/DevilConnection_cn_dirty_txt/releases
+<br>
+加载方法请查看 https://github.com/shouennyou/DevilConnection_ModLoader/releases
 <br>
 个人行为，不承担二次修改责任<br>
 <br>
-谨以此仓库 催更 古今狐白日语社。如果更新进度缓慢，建议 创建仓库，允许开发者 提交修改
+谨以此仓库 催更 古今狐白日语社。如果贵社 更新遇到问题，建议 创建仓库，允许活跃开发者提交修改。
 
