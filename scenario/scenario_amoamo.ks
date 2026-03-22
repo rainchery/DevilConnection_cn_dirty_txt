@@ -1014,7 +1014,7 @@
 #阿莫阿莫
 [if exp="f.hutanari == 1"][emb exp="f.name"]似乎和阿莫一样呢……[r]
 要来场扶她的击剑对决吗？[else]咪咪也可大可小喔……[r]
-啊，难道贝尔宝宝那样娇小的体型合你的胃口？[endif][p]
+啊，难道贝尔宝宝那样娇小的体型更合你的胃口？[endif][p]
 [_tb_end_text]
 
 [playse  volume="100"  time="0"  buf="1"  storage="sasu2.ogg"  ]

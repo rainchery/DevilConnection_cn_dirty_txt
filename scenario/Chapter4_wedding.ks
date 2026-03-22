@@ -100,7 +100,7 @@
 [chara_mod  name="ウエディングでびるん"  time="0"  cross="false"  storage="chara/56/1.png"  ]
 [tb_start_text mode=1 ]
 #德比伦
-什么破名字！奶奶滴，脑袋晕晕乎乎的，[r]
+什么破名字！妈的，脑袋晕晕乎乎的，[r]
 身体也感觉不受控了……[p]
 
 

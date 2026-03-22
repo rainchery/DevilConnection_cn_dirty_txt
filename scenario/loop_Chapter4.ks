@@ -1532,7 +1532,7 @@
 [tb_start_text mode=1 ]
 #德比伦
 你们这些王八蛋，个个都瞧不起本大爷！[r]
-[font size=50]混蛋，滚远一点！[resetfont][p]
+[font size=50]妈的，滚远一点！[resetfont][p]
 [_tb_end_text]
 
 [tb_hide_message_window  ]

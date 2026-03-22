@@ -1258,12 +1258,12 @@
 [quake  time="300"  count="5"  hmax="3"  wait="false"  ]
 [tb_start_text mode=1 ]
 #NEO德比伦
-[quake_text][font size=75]呜哇！[resetfont][p]
+[quake_text][font size=75]呜哇！[resetfont][free_quake_text][p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
 #NEO德比伦
-[quake_text][delay speed=100]…………[resetdelay][p]
+[quake_text][delay speed=100]…………[resetdelay][free_quake_text][p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]

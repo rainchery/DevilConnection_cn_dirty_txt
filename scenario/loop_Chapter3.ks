@@ -1414,7 +1414,7 @@
 [tb_start_text mode=1 ]
 #德比伦
 哒呀[delay speed=100]……[resetdelay][r]
-他妈的，贴这么近。[p]
+妈的，贴这么近。[p]
 [_tb_end_text]
 
 [playse  volume="60"  time="0"  buf="1"  storage="fuku2.ogg"  ]

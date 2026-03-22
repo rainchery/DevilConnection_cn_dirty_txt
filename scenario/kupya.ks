@@ -860,6 +860,14 @@ f.hint = hintAvailable[f.hintIdx]
 [_tb_end_text]
 
 [jump  storage="kupya.ks"  target="*modoru_hint"  ]
+*ENDundefined
+
+[tb_start_text mode=1 ]
+#库皮亚多艾露
+给咱一点点时间想想嘛[r]晚点再问咱喔[p]
+[_tb_end_text]
+
+[jump  storage="kupya.ks"  target="*modoru_hint"  ]
 *complete
 
 [chara_mod  name="クピャドエル"  time="0"  cross="false"  storage="chara/14/3.png"  ]
