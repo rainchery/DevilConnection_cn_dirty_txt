@@ -521,7 +521,7 @@
 [tb_start_text mode=1 ]
 #玛尔斯
 这一切，都归咎于我的责任……。[r]
-[if exp="f.seibetu == 1][else][endif]如果当时能给与[emb exp="f.name"]更多更多的关怀……[p]
+[if exp="f.seibetu == 1][else][endif]如果当时能给予[emb exp="f.name"]更多更多的关怀……[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
@@ -695,7 +695,7 @@
 [tb_start_text mode=1 ]
 #德比伦
 为、为什么你要一口咬定是恶魔啊！本大爷和[r]
-[emb exp="f.name"]可是结下了深厚地友谊啊～[p]
+[emb exp="f.name"]可是结下了深厚的友谊啊～[p]
 
 
 [_tb_end_text]
