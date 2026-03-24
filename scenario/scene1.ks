@@ -948,7 +948,7 @@ TYRANO.kag.ftag.startTag("jump",{target:"*hutanari"});
 [tb_start_text mode=1 ]
 #&f.debiName
 [emb exp="f.name"]。还真是个非常契合你的名字啊……[r]
-[wait time=300]你的名字，本大爷已经牢记于心了。[p]
+[wait time=300]你的名字，本大爷已经捏在手里了。[p]
 [_tb_end_text]
 
 *no_Solomon
