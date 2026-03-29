@@ -106,7 +106,7 @@
 [chara_mod  name="劇場でび"  time="0"  cross="false"  storage="chara/15/dagya20.png"  ]
 [tb_start_text mode=1 ]
 #德比伦
-那些杂鱼们去魔利西亚收集魔力时，[r]
+那些杂鱼们去魔吉利西亚收集魔力时，[r]
 会通过嘴巴来补充行动所需的魔力。[p]
 
 
