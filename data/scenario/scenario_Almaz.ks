@@ -545,7 +545,7 @@
 [playse  volume="100"  time="0"  buf="1"  storage="sasu2.ogg"  ]
 [quake  time="300"  count="5"  hmax="3"  wait="false"  ]
 [chara_mod  name="コマでび"  time="0"  cross="false"  storage="chara/10/103.png"  ]
-[jump  storage="scenario_Almaz.ks"  target="*Alice"  cond="f.Alice_nabe>=1"  ]
+[jump  storage="scenario_Almaz.ks"  target="*Alice"  cond="f.Alice_nabe==1"  ]
 [tb_start_text mode=1 ]
 #德比伦
 [font size=50]都说了根本就没这回事！[resetfont][r][font size=25]够了，别再这样了！[resetfont][p]
