@@ -5,7 +5,6 @@
 *go_to_record
 
 [s  cond="$('.ribbon.record').length>0"  ]
-[guard_click]
 [playse  volume="100"  time="0"  buf="1"  storage="hon_ake.ogg"  ]
 [iscript]
 $('.gallery,.ng').not('.menu').remove()
@@ -50,7 +49,7 @@ $('.menu.event-setting-element').css('visibility', '').filter('.record').css('vi
 
 [ptext layer="0" name="record,data_text" text="&`${sf.sticker.length}/${dc.stickerData().length}`" face="puikko" color="0xf6d36d" size="33" x="419" y="343" width="150" align="right"  edge="0x445492"]
 
-[ptext layer="0" name="record,total_mp" text="&sf.wholeTotalMP" face="puikko" color="0xf6d36d" size="58" x="940" y="100" width="200" align="right"  edge="0x445492"]
+[ptext layer="0" name="record,total_mp" text="&sf.wholeTotalMP" face="puikko" color="0xf6d36d" size="58" x="940" y="125" width="200" align="right"  edge="0x445492"]
 
 [glink  name="record,button,d1"  graphic="collection_omake/mp1.png"  target="*debi_image"  x="695"  y="803"  width="30"  height="39"  size="0"  exp="tf.recordSE=1;sf.mpImage=1"  cm="false"  ]
 [if exp="sf.wholeTotalMP>=2000"]
@@ -79,8 +78,8 @@ $('.menu.event-setting-element').css('visibility', '').filter('.record').css('vi
 const setEdgeWidth = (width) => function (_, val) {
 return val.replace(/1px/g, `${width}px`)
 }
-$('.data_text').css('text-shadow', setEdgeWidth(3))
-$('.total_mp').css('text-shadow', setEdgeWidth(4))
+$('.data_text').css('webkit-text-stroke', '2px #374781')
+$('.total_mp').css('webkit-text-stroke', '4px #374781')
 $('.total_mp_gauge').css({
 'max-width':`${455 * Math.min(6666, sf.wholeTotalMP) / 6666}px`,
 })
@@ -127,12 +126,10 @@ tf.recordSE = 0
 [image layer="0"  time=200  name="record,mp_debi"  folder="image"  storage="&`collection_omake/debi${sf.mpImage}.png`"  x="640"  y="60"]
 
 [call  target="*preload_ribbon"  storage=""  ]
-[free_guard_click]
 [s  ]
 *go_to_gallery
 
 [s  cond="$('.ribbon.gallery').length>0"  ]
-[guard_click]
 [playse  volume="100"  time="0"  buf="1"  storage="hon_ake.ogg"  ]
 [iscript]
 $('.record,.ng').not('.menu').remove()
@@ -189,7 +186,6 @@ tf.g = tf.galleryData[tf.idx]
 [mo_scale name="gallery.thumb" rate="98"]
 
 [call  target="*preload_ribbon"  storage=""  ]
-[free_guard_click]
 [s  ]
 *gallery_folder
 
@@ -271,7 +267,6 @@ $('.gallery.button,.menu').appendTo(TYRANO.kag.layer.getFreeLayer())
 *go_to_ng
 
 [s  cond="$('.ribbon.ng').length>0"  ]
-[guard_click]
 [playse  volume="100"  time="0"  buf="1"  storage="hon_ake.ogg"  ]
 [iscript]
 $('.record,.gallery').not('.menu').remove()
@@ -329,7 +324,6 @@ tf.g = tf.ngData[tf.idx]
 [mo_scale name="ng.thumb" rate="98"]
 
 [call  target="*preload_ribbon"  storage=""  ]
-[free_guard_click]
 [s  ]
 *ng_confirm
 
