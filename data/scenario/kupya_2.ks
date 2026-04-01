@@ -1,7 +1,5 @@
 ﻿[_tb_system_call storage=system/_kupya_2.ks]
 
-[eval exp="f.hint=1"]
-
 [cm  ]
 [chara_show  name="プレイヤー"  zindex="2"  layer="1"  time="0"  wait="false"  storage="chara/2/te.png"  width="1280"  height="960"  ]
 [bg  time="0"  method="crossfade"  storage="kupya_2.webp"  ]
@@ -12,6 +10,13 @@
 [_tb_end_text]
 
 [call  storage="phase.ks"  target="*show_top"  ]
+[iscript]
+const today = new Date()
+tf.aprilFool = today.getMonth() == 3 && today.getDate() == 1 && f.currentLoop == 1
+[endscript]
+
+[jump  storage="loop_kupya_2.ks"  target="*nise2"  cond="tf.aprilFool&&f.nise==1"  ]
+[jump  storage="loop_kupya_2.ks"  target="*nise"  cond="tf.aprilFool&&f.nise==0"  ]
 [jump  storage="loop_kupya_2.ks"  target="*end_complete"  cond="f.end_complete==1"  ]
 [jump  storage="loop_kupya_1.ks"  target="*30"  cond="dc.endCount()>=dc.totalEndings()"  ]
 [jump  storage="loop_kupya_2.ks"  target="*loop2"  cond="f.currentLoop>1"  ]
@@ -48,6 +53,7 @@ if (f.currentLoop >= 2) {
 if (f.past_name != f.name) tf.ohaLabels.push('*name')
 if (f.past_sex != f.seibetu) tf.ohaLabels.push('*gender')
 }
+if (f.nise == 2) tf.ohaLabels.unshift('*nise')
 [endscript]
 
 [iscript]
