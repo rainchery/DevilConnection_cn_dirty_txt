@@ -1,5 +1,258 @@
 ﻿[_tb_system_call storage=system/_loop_kupya_2.ks]
 
+*nise
+
+[tb_start_text mode=1 ]
+#ニセドエル
+[_tb_end_text]
+
+[chara_show  name="ニセドエル"  time="500"  wait="false"  storage="chara/69/2.png"  width="1280"  height="960"  left="0"  top="0"  reflect="false"  ]
+[playse  volume="100"  time="0"  buf="4"  storage="nisedoeru.ogg"  ]
+
+[tb_start_tyrano_code]
+[keyframe name="nise"]
+[frame p="0%" y="0"]
+[frame p="50%" y="-30"]
+[frame p="100%" y="0"]
+[endkeyframe]
+[kanim name="ニセドエル" keyframe="nise" count="infinite" time="2000" direction="alternate" easing="linear"]
+[_tb_end_tyrano_code]
+
+[flash_off  time="600"  effect="fadeOut"  ]
+
+[wait  time="500"  ]
+[fadein_window  time="1000"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+あ[delay speed=100]・・・[resetdelay]ど、[wait time=100]どうもデスゥ[p]
+
+
+
+[_tb_end_text]
+
+[layopt layer=4 visible="true"]
+
+[image name="kuro" layer=4 folder="fgimage" storage="default/kuro.webp" time="0"  wait="false"  ]
+
+[playse  volume="100"  time="0"  buf="1"  storage="doa3.ogg"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+ま、[wait time=100]待つデスゥー！[p]
+
+
+
+[_tb_end_text]
+
+[flash  time="0"  effect="fadeIn"  color="0x000000"  ]
+
+[chara_hide_all  time="0"  wait="false"  ]
+[chara_hide  name="プレイヤー"  layer="1"  time="0"  wait="false"  pos_mode="false"  ]
+[wait  time="800"  ]
+[free layer=4 name="kuro" time="0"  ]
+
+[wait  time="500"  ]
+[tb_hide_message_window  ]
+[eval exp="f.nise=1"]
+
+[jump  storage="syoukan.ks"  target="*back_from_kupya"  ]
+*nise2
+
+[playbgm  volume="40"  time="1000"  loop="true"  storage="nisedoeru.ogg"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+[_tb_end_text]
+
+[chara_show  name="ニセドエル"  time="500"  wait="false"  storage="chara/69/2.png"  width="1280"  height="960"  left="0"  top="0"  reflect="false"  ]
+
+[tb_start_tyrano_code]
+[keyframe name="nise"]
+[frame p="0%" y="0"]
+[frame p="50%" y="-30"]
+[frame p="100%" y="0"]
+[endkeyframe]
+[kanim name="ニセドエル" keyframe="nise" count="infinite" time="2000" direction="alternate" easing="linear"]
+[_tb_end_tyrano_code]
+
+[flash_off  time="600"  effect="fadeOut"  ]
+
+[wait  time="500"  ]
+[fadein_window  time="1000"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+さっきはいきなりドアを締められて[r]び、びっくりしたデスゥ…[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+ニセはニセドエルと言うのデス！[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+昨日クピャちゃんがこの家のドアの前に[r]居たのを見て来てみたのデスゥ[p]
+[_tb_end_text]
+
+[tb_start_text mode=4 ]
+#ニセドエル
+ニセも何かお手伝いがしたいデスゥ[wait time=500]
+[_tb_end_text]
+
+[choice2 text1="パンの耳を渡す" target1="*pan" text2="厄除け魔法" target2="*yaku" y="500"]
+
+[s  ]
+*pan
+
+[flash  time="0"  effect="fadeIn"  color="0xFFFFFF"  ]
+
+[chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/3.png"  ]
+[playse  volume="100"  time="1000"  buf="4"  storage="hirameki.ogg"  ]
+[wait  time="100"  ]
+[flash_off  time="0"  effect="fadeOut"  ]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+！[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+[delay speed=300]・・・[resetdelay]お[p]
+[_tb_end_text]
+
+[playse  volume="100"  time="1000"  buf="4"  storage="kawaii.ogg"  ]
+[chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/4.png"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+おいしいデスゥ[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+食べ物なんて生まれて[r]はじめて食べたデスゥ[p]
+
+[_tb_end_text]
+
+[chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/3.png"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+これっ袋ごとくれるんデスねぇ！[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+アナタはとてもお優しいデスねぇ[delay speed=100]・・・[resetdelay][p]
+[_tb_end_text]
+
+[chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/4.png"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+ありがとデスゥ！[p]
+
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+って、ニセが感謝しちゃってるデスゥ〜[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+では！失礼しましたデスゥ[p]
+[_tb_end_text]
+
+[jump  storage="loop_kupya_2.ks"  target="*nise_jump"  ]
+*yaku
+
+[achieve_sticker no=82]
+[flash  time="0"  effect="fadeIn"  color="0xFFFFFF"  ]
+
+[chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/5.png"  ]
+[tb_hide_message_window  ]
+[playse  volume="100"  time="1000"  buf="5"  storage="oharai.ogg"  loop="true"  ]
+[chara_mod  name="プレイヤー"  time="0"  cross="false"  storage="chara/2/yaku.png"  ]
+[flash_off  time="0"  effect="fadeOut"  ]
+
+[wait  time="500"  ]
+[playse  volume="100"  time="1000"  buf="1"  storage="aseru.ogg"  ]
+[tb_show_message_window  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+なんデスかぁ[r]やめるデスゥ！[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+ニセのニセは偽物のニセじゃないデスよ！[r]二世だからニセドエルなのデスゥッ！[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+ぶたないでほしいデスゥ[p]
+[_tb_end_text]
+
+[chara_move  name="プレイヤー"  anim="true"  time="1000"  effect="easeInQuad"  wait="false"  left="0"  top="960"  width="1280"  height="961"  ]
+[stopse  time="1000"  buf="5"  fadeout="true"  ]
+[tb_start_text mode=4 ]
+#ニセドエル
+ウウゥッ[delay speed=100]・・・[resetdelay]
+[_tb_end_text]
+
+[chara_show  name="TAP"  time="500"  wait="false"  storage="chara/18/TAP.png"  width="400"  height="200"  left="444"  top="-15"  reflect="false"  ]
+[clickable  storage="loop_kupya_2.ks"  x="469"  y="148"  width="339"  height="183"  target="*tap1"  _clickable_img=""  ]
+[s  ]
+*tap1
+
+[flash  time="0"  effect="fadeIn"  color="0xFFFFFF"  ]
+
+[chara_move  name="プレイヤー"  anim="false"  time="0"  effect="linear"  wait="false"  left="0"  top="0"  width="1280"  height="961"  ]
+[chara_mod  name="プレイヤー"  time="0"  cross="false"  storage="chara/2/te.png"  ]
+[playse  volume="100"  time="0"  buf="1"  storage="mp.ogg"  ]
+[quake  time="300"  count="5"  hmax="3"  wait="false"  ]
+[chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/6.png"  ]
+[chara_hide  name="TAP"  time="0"  wait="false"  pos_mode="false"  ]
+[wait  time="100"  ]
+[playse  volume="100"  time="1000"  buf="4"  storage="hirameki.ogg"  ]
+[flash_off  time="0"  effect="fadeOut"  ]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+[delay speed=300]・・・[resetdelay]！[p]
+[_tb_end_text]
+
+[playse  volume="100"  time="1000"  buf="4"  storage="kawaii.ogg"  ]
+[chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/7.png"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+頭を撫でられるのは嬉しいデスゥ〜[p]
+[_tb_end_text]
+
+[chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/1.png"  ]
+[tb_start_text mode=1 ]
+#ニセドエル
+撫でてくれてありがとデスゥ！[p]
+
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#ニセドエル
+それでは！失礼しましたデスゥ[p]
+[_tb_end_text]
+
+*nise_jump
+
+[eval exp="f.nise=2"]
+
+[flash  time="100"  effect="fadeIn"  color="0x000000"  ]
+
+[stopbgm  time="0"  ]
+[playse  volume="100"  time="0"  buf="1"  storage="doa2.ogg"  ]
+[chara_hide_all  time="0"  wait="false"  ]
+[chara_hide  name="プレイヤー"  layer="1"  time="0"  wait="false"  pos_mode="false"  ]
+[wait  time="800"  ]
+
+[wait  time="500"  ]
+[tb_hide_message_window  ]
+[jump  storage="syoukan.ks"  target="*back_from_kupya"  ]
 *loop1
 
 [playbgm  volume="50"  time="300"  loop="true"  storage="9_cupyadoel.ogg"  ]
