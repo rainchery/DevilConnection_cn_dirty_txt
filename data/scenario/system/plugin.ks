@@ -156,6 +156,7 @@
 [popopo_chara name="库皮亚多艾露" storage="po_eru.ogg"]
 [popopo_chara name="くぴゃだぎゃ" storage="po_kupyadagya.ogg"]
 [popopo_chara name="库皮&德比" storage="po_kupyadagya.ogg"]
+[popopo_chara name="ニセドエル" storage="po_nise.ogg"]
 [popopo_chara name="ザコウモリA" storage="koumoriA.ogg"]
 [popopo_chara name="杂鱼蝙蝠A" storage="koumoriA.ogg"]
 [popopo_chara name="ザコウモリB" storage="koumoriB2.ogg"]
