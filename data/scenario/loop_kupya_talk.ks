@@ -131,43 +131,43 @@
 
 [chara_mod  name="クピャドエル"  time="0"  cross="false"  storage="chara/14/1.png"  ]
 [tb_start_text mode=1 ]
-#クピャドエル
-先ほどは急用で呼び鈴に[r]対応できず失礼しましたぁ[p]
+#库皮亚多艾露
+方才因急事，未能及时应铃[r]真是万分抱歉[p]
 [_tb_end_text]
 
 [chara_mod  name="クピャドエル"  time="0"  cross="false"  storage="chara/14/2.png"  ]
 [tb_start_text mode=1 ]
-#クピャドエル
-代わりにニセドエルさんが[r]対応してくださったみたいですねぇ！[p]
+#库皮亚多艾露
+似乎是多艾露二世[r]帮忙回应了您的呼唤！[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#クピャドエル
-ニセドエルさんはワタクシの[r]同期の天使仲間なのですぅ[p]
+#库皮亚多艾露
+多艾露二世，乃在下[r]同期天使之伙伴[p]
 [_tb_end_text]
 
 [chara_mod  name="クピャドエル"  time="0"  cross="false"  storage="chara/14/5.png"  ]
 [tb_start_text mode=1 ]
-#クピャドエル
-ちなみにこのお名前は[r]ワタクシが名付けたのですよぅ♪[p]
+#库皮亚多艾露
+顺带一提，[r]此名字可是咱所取的呀♪[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#クピャドエル
-大天使様からお名前をいただく際に[r]ワタクシが提案したのですぅ[p]
+#库皮亚多艾露
+大天使大人赐名之际[r]咱曾献上一些建议[p]
 
 [_tb_end_text]
 
 [chara_mod  name="クピャドエル"  time="0"  cross="false"  storage="chara/14/7.png"  ]
 [tb_start_text mode=1 ]
-#クピャドエル
-威勢のいいイセドエルさんの[r]意志を次ぐ二世[delay speed=100]・・・[resetdelay]そう、ニセドエル！[p]
+#库皮亚多艾露
+威势十足的⌈多艾露一世⌋[r]继承其意志的二世[delay speed=100]・・・[resetdelay]没错，就是⌈多艾露二世⌋[p]
 [_tb_end_text]
 
 [chara_mod  name="クピャドエル"  time="0"  cross="false"  storage="chara/14/1.png"  ]
 [tb_start_text mode=1 ]
-#クピャドエル
-くぴゃあ[delay speed=100]・・・[resetdelay]大天使様も承認してくださって[r]あれは良き思い出ですぅ[p]
+#库皮亚多艾露
+库啪[delay speed=100]・・・[resetdelay]大天使大人亦认可了呢[r]那真是美好的回忆呀~[p]
 [_tb_end_text]
 
 [eval exp="f.nise=3"]
