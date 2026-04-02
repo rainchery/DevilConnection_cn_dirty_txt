@@ -124,6 +124,8 @@
 [chara_new  name="ミカエル"  jname="ミカエル"  storage="chara/67/1.png"  ]
 ;ミーティア星
 [chara_new  name="ミーティア星"  jname="ミーティア星"  storage="chara/68/hoshi.png"  ]
+;ニセドエル
+[chara_new  name="ニセドエル"  jname="ニセドエル"  storage="chara/69/1.png"  ]
 ;透過チェシカ
 [chara_new  name="透過チェシカ"  jname="透過チェシカ"  storage="chara/70/c1.png"  ]
 ;でび縛り
@@ -225,6 +227,7 @@ f['kupya_owari']=0;
 f['subtitle']=''; 
 f['END_ogg']=0; 
 f['neodebi_TAP']=0; 
+f['nise']=0; 
 f['kupya_kyo']=0; 
 f['bel_call']=0; 
 f['debirun2']=0; 
