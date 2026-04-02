@@ -166,6 +166,7 @@
 [flash  time="1000"  effect="fadeIn"  color="0x000000"  ]
 
 [chara_hide_all  time="0"  wait="false"  ]
+[chara_hide  name="プレイヤー"  layer="1"  time="0"  wait="false"  pos_mode="false"  ]
 [stopbgm  time="1000"  fadeout="true"  ]
 [wait  time="1000"  ]
 [playse  volume="60"  time="0"  buf="1"  storage="fuku.ogg"  ]
