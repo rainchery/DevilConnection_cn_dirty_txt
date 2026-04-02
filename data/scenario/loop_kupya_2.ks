@@ -3,7 +3,7 @@
 *nise
 
 [tb_start_text mode=1 ]
-#ニセドエル
+#伪多艾露
 [_tb_end_text]
 
 [chara_show  name="ニセドエル"  time="500"  wait="false"  storage="chara/69/2.png"  width="1280"  height="960"  left="0"  top="0"  reflect="false"  ]
@@ -23,8 +23,8 @@
 [wait  time="500"  ]
 [fadein_window  time="1000"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-あ[delay speed=100]・・・[resetdelay]ど、[wait time=100]どうもデスゥ[p]
+#伪多艾露
+啊[delay speed=100]・・・[resetdelay]您、[wait time=100]您好呀[p]
 
 
 
@@ -36,8 +36,8 @@
 
 [playse  volume="100"  time="0"  buf="1"  storage="doa3.ogg"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-ま、[wait time=100]待つデスゥー！[p]
+#伪多艾露
+我、[wait time=100]在这里等您！[p]
 
 
 
@@ -59,7 +59,7 @@
 
 [playbgm  volume="40"  time="1000"  loop="true"  storage="nisedoeru.ogg"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
+#伪多艾露
 [_tb_end_text]
 
 [chara_show  name="ニセドエル"  time="500"  wait="false"  storage="chara/69/2.png"  width="1280"  height="960"  left="0"  top="0"  reflect="false"  ]
@@ -78,26 +78,26 @@
 [wait  time="500"  ]
 [fadein_window  time="1000"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-さっきはいきなりドアを締められて[r]び、びっくりしたデスゥ…[p]
+#伪多艾露
+刚才门突然被关上了[r]我、我吓了一跳呀…[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-ニセはニセドエルと言うのデス！[p]
+#伪多艾露
+我叫伪多艾露！[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-昨日クピャちゃんがこの家のドアの前に[r]居たのを見て来てみたのデスゥ[p]
+#伪多艾露
+昨天我看到库皮亚站在这栋房子的门前[r]所以就过来看看了呀[p]
 [_tb_end_text]
 
 [tb_start_text mode=4 ]
-#ニセドエル
-ニセも何かお手伝いがしたいデスゥ[wait time=500]
+#伪多艾露
+小伪也想来帮忙呀[wait time=500]
 [_tb_end_text]
 
-[choice2 text1="パンの耳を渡す" target1="*pan" text2="厄除け魔法" target2="*yaku" y="500"]
+[choice2 text1="递上面包边" target1="*pan" text2="祓除魔法" target2="*yaku" y="500"]
 
 [s  ]
 *pan
@@ -110,54 +110,54 @@
 [flash_off  time="0"  effect="fadeOut"  ]
 
 [tb_start_text mode=1 ]
-#ニセドエル
+#伪多艾露
 ！[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-[delay speed=300]・・・[resetdelay]お[p]
+#伪多艾露
+[delay speed=300]・・・[resetdelay]真[p]
 [_tb_end_text]
 
 [playse  volume="100"  time="1000"  buf="4"  storage="kawaii.ogg"  ]
 [chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/4.png"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-おいしいデスゥ[p]
+#伪多艾露
+・・・真、真好吃呀[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-食べ物なんて生まれて[r]はじめて食べたデスゥ[p]
+#伪多艾露
+这还是我有生以来[r]第一次吃东西呀[p]
 
 [_tb_end_text]
 
 [chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/3.png"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-これっ袋ごとくれるんデスねぇ！[p]
+#伪多艾露
+您这是...连袋子一起给我了呀！[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-アナタはとてもお優しいデスねぇ[delay speed=100]・・・[resetdelay][p]
+#伪多艾露
+真是一位非常温柔之人呀[delay speed=100]・・・[resetdelay][p]
 [_tb_end_text]
 
 [chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/4.png"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-ありがとデスゥ！[p]
+#伪多艾露
+非常感谢呀！[p]
 
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-って、ニセが感謝しちゃってるデスゥ〜[p]
+#伪多艾露
+小、小伪竟然都在表示感谢了呀〜[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-では！失礼しましたデスゥ[p]
+#伪多艾露
+那么！先告辞了呀[p]
 [_tb_end_text]
 
 [jump  storage="loop_kupya_2.ks"  target="*nise_jump"  ]
@@ -176,25 +176,25 @@
 [playse  volume="100"  time="1000"  buf="1"  storage="aseru.ogg"  ]
 [tb_show_message_window  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-なんデスかぁ[r]やめるデスゥ！[p]
+#伪多艾露
+这是什么呀[r]快住手呀！[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
 #ニセドエル
-ニセのニセは偽物のニセじゃないデスよ！[r]二世だからニセドエルなのデスゥッ！[p]
+小伪的伪(nise)不是伪造品的伪(nise)呀！[r]因为是二世(nise)所以叫多艾露二世呀！[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-ぶたないでほしいデスゥ[p]
+#多艾露二世
+还请您不要打我呀[p]
 [_tb_end_text]
 
 [chara_move  name="プレイヤー"  anim="true"  time="1000"  effect="easeInQuad"  wait="false"  left="0"  top="960"  width="1280"  height="961"  ]
 [stopse  time="1000"  buf="5"  fadeout="true"  ]
 [tb_start_text mode=4 ]
-#ニセドエル
-ウウゥッ[delay speed=100]・・・[resetdelay]
+#多艾露二世
+呜呜呜[delay speed=100]・・・[resetdelay]
 [_tb_end_text]
 
 [chara_show  name="TAP"  time="500"  wait="false"  storage="chara/18/TAP.png"  width="400"  height="200"  left="444"  top="-15"  reflect="false"  ]
@@ -215,27 +215,27 @@
 [flash_off  time="0"  effect="fadeOut"  ]
 
 [tb_start_text mode=1 ]
-#ニセドエル
+#多艾露二世
 [delay speed=300]・・・[resetdelay]！[p]
 [_tb_end_text]
 
 [playse  volume="100"  time="1000"  buf="4"  storage="kawaii.ogg"  ]
 [chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/7.png"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-頭を撫でられるのは嬉しいデスゥ〜[p]
+#多艾露二世
+很高兴您能摸摸我的头呀〜[p]
 [_tb_end_text]
 
 [chara_mod  name="ニセドエル"  time="0"  cross="false"  storage="chara/69/1.png"  ]
 [tb_start_text mode=1 ]
-#ニセドエル
-撫でてくれてありがとデスゥ！[p]
+#多艾露二世
+感谢您的抚摸呀！[p]
 
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
-それでは！失礼しましたデスゥ[p]
+#多艾露二世
+那么！先告辞了呀[p]
 [_tb_end_text]
 
 *nise_jump
