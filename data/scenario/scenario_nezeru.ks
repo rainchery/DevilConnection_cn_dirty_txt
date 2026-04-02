@@ -1454,8 +1454,8 @@
 [_tb_end_text]
 
 [chara_move  name="プレイヤー"  anim="true"  time="3000"  effect="easeOutCubic"  wait="false"  left="1"  top="-80"  width="1234"  height="925"  ]
-[camera  time="3000"  zoom="1.5"  wait="false"  x="0"  y="70"  rotate="0"  layer="layer_camera"  ease_type="ease"  ]
 [chara_mod  name="でびるん"  time="0"  cross="false"  storage="chara/1/8.png"  ]
+[camera  time="3000"  zoom="1.5"  wait="false"  x="0"  y="70"  rotate="0"  layer="layer_camera"  ease_type="ease-out"  ]
 [tb_start_text mode=1 ]
 #德比伦
 ……唔？[wait time=300]什么啊。[wait time=300][p]
