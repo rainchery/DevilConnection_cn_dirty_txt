@@ -37,7 +37,7 @@ TYRANO.kag.dc = {
     $.setStorage(
       allIdStorageName,
       ids.filter(i => i != id),
-      configSave
+      configSave,
     )
 
     const albumIdStorage = $.getStorage(albumIdStorageName, configSave)
@@ -45,7 +45,7 @@ TYRANO.kag.dc = {
     $.setStorage(
       albumIdStorageName,
       albumIds.filter(i => i.id != id),
-      configSave
+      configSave,
     )
 
     $.clearStorage(configSave, photoStorageName)
@@ -234,53 +234,15 @@ TYRANO.kag.dc = {
         // EXCLUDES_DEVIが指定されていれば、でびるんを含むポーズを省く
         p =>
           !excludedTypes.includes(poseTypes.DEVI) ||
-          p.map(i => i.file).every(f => !deviPoses.includes(f))
+          p.map(i => i.file).every(f => !deviPoses.includes(f)),
       )
       .filter(
         // EXCLUDES_NON_FIXED_POSEが指定されていれば、pos: camera以外を含むポーズを省く
         p =>
           !excludedTypes.includes(poseTypes.NON_FIXED_POSE) ||
-          p.every(i => i.pos == 'camera')
+          p.every(i => i.pos == 'camera'),
       )
   },
-  photoEffects: () => [
-    {},
-    {
-      name: '爱心浮现',
-      file: 'lovelove',
-      mode: 'screen',
-    },
-    {
-      name: '心形特效',
-      file: 'heart',
-      mode: 'color-dodge',
-    },
-    {
-      name: '星光闪耀',
-      file: 'kirakira',
-      mode: 'color-dodge',
-    },
-    {
-      name: '梦幻柔光',
-      file: 'howahowa',
-      mode: 'screen',
-    },
-    {
-      name: '集中线',
-      file: 'syuutyuu',
-      mode: 'screen',
-    },
-    {
-      name: '七彩绚烂',
-      file: 'rainbow',
-      mode: 'color-dodge',
-    },
-    {
-      name: '清爽简约',
-      file: 'sawayaka',
-      mode: 'color-dodge',
-    },
-  ],
   photoAssets: {},
   playingPoses: [],
   playingEffect: null,
@@ -316,7 +278,7 @@ TYRANO.kag.dc = {
           ...albumIds,
           { id: newId, date: $.getNowDate() + ' ' + $.getNowTime() },
         ],
-        configSave
+        configSave,
       )
     }
     // 全体用にID追加して保存
@@ -348,7 +310,7 @@ TYRANO.kag.dc = {
 
     // 全体用のID群から、アルバムとセーブデータのIDじゃないものをフィルタリングする
     const removalPhotoIds = allIds.filter(
-      id => ![...albumIds, ...idsInSave].includes(id)
+      id => ![...albumIds, ...idsInSave].includes(id),
     )
 
     // フィルタリング結果は使っていないIDなので、削除する
@@ -411,16 +373,16 @@ TYRANO.kag.ftag.master_tag.load_photo_assets = {
       .map(pose =>
         loadPhotoAsset(
           `./data/image/photo/pose/${pose.file}.png`,
-          `p_${pose.file}`
-        )
+          `p_${pose.file}`,
+        ),
       )
     const effectPromises = effects
       .filter(effect => effect.file)
       .map(effect =>
         loadPhotoAsset(
           `./data/image/photo/effect/${effect.file}.png`,
-          `e_${effect.file}`
-        )
+          `e_${effect.file}`,
+        ),
       )
     const charaPromises = [...$('.tyrano_chara')].map(chara => {
       const name = [...chara.classList].find(c => c != 'tyrano_chara')
@@ -434,7 +396,7 @@ TYRANO.kag.ftag.master_tag.load_photo_assets = {
     Promise.all(posePromises.concat(effectPromises).concat(charaPromises)).then(
       () => {
         this.kag.ftag.nextOrder()
-      }
+      },
     )
   },
 }
@@ -444,7 +406,7 @@ TYRANO.kag.ftag.master_tag.free_photo_assets = {
     this.kag.dc.playingCharas.forEach(player => player.stop())
     this.kag.dc.playingCharas = []
     const urls = Object.values(this.kag.dc.photoAssets).flatMap(asset =>
-      asset.frames.map(frame => frame.imageElement.src)
+      asset.frames.map(frame => frame.imageElement.src),
     )
     this.kag.dc.photoAssets = {}
     urls.forEach(URL.revokeObjectURL)
@@ -513,7 +475,7 @@ TYRANO.kag.ftag.master_tag.preload_assets = {
     preloads.forEach(path =>
       this.kag.preload(path, () => {
         preloadCnt++
-      })
+      }),
     )
     const timer = setInterval(() => {
       if (preloadCnt >= preloads.length) {
@@ -564,8 +526,8 @@ TYRANO.kag.ftag.master_tag.snap_photo = {
             $('<img>').addClass('snap_thumb').attr('src', thumbCode).css({
               width: 0,
               height: 0,
-            })
-          )
+            }),
+          ),
         )
         setTimeout(function () {
           that.kag.ftag.startTag(
@@ -575,7 +537,7 @@ TYRANO.kag.ftag.master_tag.snap_photo = {
               stop: 'true',
               wait: 'false',
             },
-            40
+            40,
           )
         })
         that.kag.ftag.nextOrder()
@@ -807,7 +769,7 @@ TYRANO.kag.ftag.master_tag.export_snap = {
           imgWidth + borderWidth - cWidth,
           imgHeight + borderWidth,
           cWidth,
-          cHeight
+          cHeight,
         )
 
         $.saveFile(dest.get(0).toDataURL('image/png')).then(() => {
@@ -903,7 +865,7 @@ TYRANO.kag.ftag.master_tag.deco_glink = {
       .addClass('sticker_button')
     $.setName(j_button, pm.name)
     j_button.append(
-      $('<img>').attr('src', './data/image/photo/sticker/' + pm.graphic)
+      $('<img>').attr('src', './data/image/photo/sticker/' + pm.graphic),
     )
     this.kag.event.addEventElement({ tag: 'glink', j_target: j_button, pm })
     this.setEvent(j_button, pm)
@@ -914,7 +876,7 @@ TYRANO.kag.ftag.master_tag.deco_glink = {
   setEvent: function (j_button, pm) {
     const that = TYRANO
     !(function () {
-      pm.target, pm.storage
+      ;(pm.target, pm.storage)
       const _pm = pm,
         preexp = that.kag.embScript(pm.preexp)
       j_button.click(function (e) {
@@ -996,7 +958,7 @@ TYRANO.kag.ftag.master_tag.add_sticker = {
         $('.sticker_desc').text(
           stData && stData.name && stData.desc
             ? `${stData.name}…${stData.desc}`
-            : ''
+            : '',
         )
       })
       .attr('src', 'data/image/photo/sticker/' + storage)
@@ -1066,7 +1028,7 @@ TYRANO.kag.ftag.master_tag.export_deco_canvas = {
         $('<img>').addClass('snap_thumb').attr('src', thumbCode).css({
           width: 0,
           height: 0,
-        })
+        }),
       )
       .css({
         display: 'none',
