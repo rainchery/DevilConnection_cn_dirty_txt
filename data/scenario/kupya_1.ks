@@ -1,7 +1,5 @@
 ﻿[_tb_system_call storage=system/_kupya_1.ks]
 
-[eval exp="f.hint=1"]
-
 [cm  ]
 [chara_show  name="プレイヤー"  zindex="2"  layer="1"  time="0"  wait="false"  storage="chara/2/te.png"  width="1280"  height="960"  ]
 [bg  time="0"  method="crossfade"  storage="kupya_1.webp"  ]
