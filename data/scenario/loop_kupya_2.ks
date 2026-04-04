@@ -181,7 +181,7 @@
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
-#ニセドエル
+#nise多艾露
 小伪的伪(nise)不是伪造品的伪(nise)呀！[r]因为是二世(nise)所以叫多艾露二世呀！[p]
 [_tb_end_text]
 
