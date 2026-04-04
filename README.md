@@ -11,7 +11,7 @@
 <br>
 加载方法请查看 https://github.com/shouennyou/DevilConnection_ModLoader
 <br>
-个人行为，不承担二次修改责任<br>
+本项目仅为个人行为，不承担任何因二次修改而产生的责任。<br>
 <br>
 原版v1.00更新到v1.01 更新了什么？<br>
 修复文本溢出、修复部分显示问题、重置存档不会有拉弥亚诅咒残留 等。<br>
