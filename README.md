@@ -9,7 +9,10 @@
 <br>
 下载页面 https://github.com/rainchery/DevilConnection_cn_dirty_txt/releases
 <br>
-加载方法请查看 https://github.com/shouennyou/DevilConnection_ModLoader
+加载方法请查看 https://github.com/shouennyou/DevilConnection_ModLoader <br>
+CN_text 是文本包 <br>
+CN_img 是图片包 <br>
+2个包请全部保存并加载，缺少任意一个包会导致翻译不完全 <br>
 <br>
 <br>
 本项目仅为个人行为，不承担任何因二次修改而产生的责任。<br>
