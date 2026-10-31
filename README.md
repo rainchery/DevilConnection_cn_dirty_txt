@@ -1,4 +1,5 @@
 # 恶魔连结 简体中文完全汉化补丁
+本项目已停止开发
 
 **原版汉化补丁发布地址**：[古今狐白日语社 恶魔连结_简体中文汉化补丁](https://www.bilibili.com/video/BV1MdiuBYEud) <br> 
   
