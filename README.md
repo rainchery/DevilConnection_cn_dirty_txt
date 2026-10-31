@@ -1,12 +1,12 @@
 # 恶魔连结 简体中文完全汉化补丁
-**本项目已停止维护**<br> 
-**本项目已停止维护**
+**本项目已停止维护** <br> 
+**本项目已停止维护** 可以留意fork （页面右上角）<br>
 
 **原版汉化补丁发布地址**：[古今狐白日语社 恶魔连结_简体中文汉化补丁](https://www.bilibili.com/video/BV1MdiuBYEud) <br> 
   
-**三改汉化补丁发布地址**：[github.com/shouennyou/DevilConnection_cn_dirty_txt](github.com/shouennyou/DevilConnection_cn_dirty_txt)  <br>
+**三改汉化补丁发布地址**：[github.com/shouennyou/DevilConnection_cn_dirty_txt](https://github.com/shouennyou/DevilConnection_cn_dirty_txt)<br>
 
->本项目是 古今狐白日语社 恶魔连结_简体中文汉化补丁Ver 1.0.1 二次修改版  <br>
+>本项目是 古今狐白日语社 恶魔连结_简体中文汉化补丁Ver 1.0.1 二次修改版 （已停止维护）<br>
 
 ---
 
@@ -14,7 +14,6 @@
 
 本项目依赖于：[shouennyou/DevilConnection_ModLoader](https://github.com/shouennyou/DevilConnection_ModLoader)  <br>
 
-二改汉化补丁下载：[DevilConnection_cn_dirty_txt/releases](https://github.com/rainchery/DevilConnection_cn_dirty_txt/releases)  <br>
 * **`CN_text`**：文本包
 * **`CN_img`**：图片包
 
