@@ -1,9 +1,10 @@
 # 恶魔连结 简体中文完全汉化补丁
-本项目已停止开发
+**本项目已停止开发**
+**本项目已停止开发**
 
 **原版汉化补丁发布地址**：[古今狐白日语社 恶魔连结_简体中文汉化补丁](https://www.bilibili.com/video/BV1MdiuBYEud) <br> 
   
-**二改汉化补丁发布地址**：[github.com/rainchery/DevilConnection_cn_dirty_txt/releases](https://github.com/rainchery/DevilConnection_cn_dirty_txt/releases)  <br>
+**三改汉化补丁发布地址**：[github.com/shouennyou/DevilConnection_cn_dirty_txt](github.com/shouennyou/DevilConnection_cn_dirty_txt)  <br>
 
 >本项目是 古今狐白日语社 恶魔连结_简体中文汉化补丁Ver 1.0.1 二次修改版  <br>
 
