@@ -419,8 +419,11 @@ TYRANO.kag.dc = {
         storage: 'omake_debi',
       },
     ]
-    return data.slice(start, start + len)
+    return data
+      .concat(TYRANO.kag.dc.additionalNgSceneData())
+      .slice(start, start + len)
   },
+  additionalNgSceneData: () => [],
 }
 
 TYRANO.kag.variable.sf.gallery || (TYRANO.kag.variable.sf.gallery = [])
