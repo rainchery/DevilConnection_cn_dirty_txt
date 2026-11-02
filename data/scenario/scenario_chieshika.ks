@@ -741,7 +741,7 @@
 [chara_hide  name="コマでび"  time="0"  wait="false"  pos_mode="false"  ]
 [stopbgm  time="0"  ]
 [chara_show  name="サブでび"  time="0"  wait="false"  storage="chara/30/c4.png"  width="488"  height="530"  left="347"  top="204"  reflect="false"  ]
-[chara_show  name="透過チェシカ"  time="0"  wait="false"  storage="chara/70\/c1.png"  width="241"  height="189"  left="793"  top="219"  reflect="false"  ]
+[chara_show  name="透過チェシカ"  time="0"  wait="false"  storage="chara/70/c1.png"  width="241"  height="189"  left="793"  top="219"  reflect="false"  ]
 [tb_start_tyrano_code]
 [keyframe name="c"]
 [frame p="0%" y="0"]
@@ -786,7 +786,7 @@
 
 [_tb_end_text]
 
-[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70\/c2.png"  ]
+[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70/c2.png"  ]
 [tb_start_text mode=1 ]
 #柴西卡
 只要一根！一根就好啦！[r]
@@ -802,7 +802,7 @@
 你当我还能换角呢！这辈子就这两只命根子！[p]
 [_tb_end_text]
 
-[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70\/c3.png"  ]
+[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70/c3.png"  ]
 [tb_start_text mode=1 ]
 #柴西卡
 哎呀，话是那么说，说不定一下次就拔下来啦～[r]
@@ -817,7 +817,7 @@
 
 [_tb_end_text]
 
-[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70\/c4.png"  ]
+[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70/c4.png"  ]
 [tb_start_text mode=1 ]
 #柴西卡
 我在用点力拽拽看……[r]
@@ -874,7 +874,7 @@
 
 [_tb_end_text]
 
-[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70\/c5.png"  ]
+[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70/c5.png"  ]
 [tb_start_text mode=1 ]
 #柴西卡
 好～咧，就是这股劲头，[r]
@@ -893,7 +893,7 @@
 
 [_tb_end_text]
 
-[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70\/c2.png"  ]
+[chara_mod  name="透過チェシカ"  time="0"  cross="false"  storage="chara/70/c2.png"  ]
 [playse  volume="100"  time="0"  buf="5"  storage="tuno2.ogg"  loop="true"  ]
 [chara_mod  name="サブでび"  time="0"  cross="false"  storage="chara/30/c7.png"  ]
 [tb_start_text mode=1 ]

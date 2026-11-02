@@ -892,7 +892,7 @@
 [chara_mod  name="クピャドエル"  time="0"  cross="false"  storage="chara/14/22.png"  ]
 [tb_start_text mode=1 ]
 #库皮亚多艾露
-[delay speed=100]……[resetdelay]但是[resetdelay]这样也挺好。[r]
+[delay speed=100]……[resetdelay]但是这样也挺好。[r]
 即便并不完美……[delay speed=100]……[resetdelay][p]
 [_tb_end_text]
 
