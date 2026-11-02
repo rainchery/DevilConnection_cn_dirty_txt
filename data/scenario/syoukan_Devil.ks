@@ -236,8 +236,6 @@ f.timerId = null;
 
 [jump  storage="&`Devil_${f.chara.scenario}.ks`"  target=""  ]
 *bg
-[reset_camera  time="10"  wait="false"  ]
-
 [if exp="f.nemumi >= 1"]
 
 [bg  time="200"  method="crossfade"  storage="kupya_syo1.webp"  ]
