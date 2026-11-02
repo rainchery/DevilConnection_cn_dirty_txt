@@ -635,8 +635,6 @@ f.timerId = null;
 [jump  storage="&`kill_${f.chara.scenario}.ks`"  target=""  cond="sf.kill>0"  ]
 [jump  storage="&`scenario_${f.chara.scenario}.ks`"  target=""  ]
 *bg
-[reset_camera  time="10"  wait="false"  ]
-
 [if exp="f.nemumi == 1"]
 
 [bg  time="200"  method="crossfade"  storage="9.webp"  ]
