@@ -3,8 +3,8 @@ TYRANO.kag.dc = {
   additionalNgSceneData: () => [
     {
       name: 'extra',
-      title: '何気ない日常',
-      cond: 'エピローグ後に解放',
+      title: '平淡无奇的日常',
+      cond: '通关后日谈后解锁',
       storage: 'omake_steam',
     },
   ],
