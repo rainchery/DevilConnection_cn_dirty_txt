@@ -855,7 +855,7 @@ f.hint = hintAvailable[f.hintIdx]
 [chara_mod  name="クピャドエル"  time="0"  cross="false"  storage="chara/14/8.png"  ]
 [tb_start_text mode=1 ]
 #库皮亚多艾露
-[if exp="f.wedding_kidoku == 1"]亦或者，[else]若当时[endif][font color=0xEC6FC5 bold=true]向他伸出友谊之手……[resetfont][r]
+[if exp="f.wedding_kidoku != 1"]亦或者，[else]若当时[endif][font color=0xEC6FC5 bold=true]向他伸出友谊之手……[resetfont][r]
 结果或许已然不同。[p]
 [_tb_end_text]
 
