@@ -203,14 +203,14 @@ TYRANO.kag.dc = {
           f.ruby === 1
             ? '这群杂鱼恶魔……<br>就是太蠢所以惹人厌！'
             : f.ruby === 2
-            ? sf.censorship
-              ? '没必要一口气全■掉吧……<br>妈的！'
-              : '没必要一口气全杀掉吧……<br>妈的！'
-            : f.ruby === 3
-            ? '都怪这群杂鱼恶魔，<br>一下子全黏过来了！'
-            : f.ruby === 4
-            ? '根本就没必要发动<br>挑衅魔法的吧……'
-            : '',
+              ? sf.censorship
+                ? '没必要一口气全■掉吧……<br>妈的！'
+                : '没必要一口气全杀掉吧……<br>妈的！'
+              : f.ruby === 3
+                ? '都怪这群杂鱼恶魔，<br>一下子全黏过来了！'
+                : f.ruby === 4
+                  ? '根本就没必要发动<br>挑衅魔法的吧……'
+                  : '',
         timing: '第3天 鲁比',
         cond: '惹恼鲁比',
         hintCond: f => f.currentLoop >= 1 && f.day >= 3,
@@ -417,7 +417,7 @@ TYRANO.kag.dc = {
   hintAvailable: function (f, seen) {
     return Object.entries(this._ends())
       .filter(
-        ([key, end]) => !seen.includes(key) && end.hintCond && end.hintCond(f)
+        ([key, end]) => !seen.includes(key) && end.hintCond && end.hintCond(f),
       )
       .map(([key, _]) => key)
   },
