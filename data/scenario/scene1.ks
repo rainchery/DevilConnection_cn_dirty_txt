@@ -330,7 +330,7 @@ tf.ngWord = dc.ngWords.some(word => f.name.includes(word))
 [jump  storage="scene1.ks"  target="*input_fanatic"  cond="f.name=='恶魔崇拜者'"  ]
 [jump  storage="scene1.ks"  target="*input_akuma"  cond="dc.makaiWords.some(w=>f.name.toLowerCase().includes(w))"  ]
 [jump  storage="scene1.ks"  target="*input_zako"  cond="dc.zakoWords.some(w=>f.name.includes(w))"  ]
-[jump  storage="scene1.ks"  target="*input_kesu"  cond="dc.kesuWords.some(w=>f.name==w)"  ]
+[jump  storage="scene1.ks"  target="*input_kesu"  cond="dc.kesuWords.some(w=>f.name.includes(w))"  ]
 [jump  storage="scene1.ks"  target="*input_warui"  cond="f.name.startsWith('<')"  ]
 [jump  storage="scene1.ks"  target="*input_coinfirm"  cond="f.name!=''"  ]
 [quake  time="300"  count="5"  hmax="3"  wait="false"  ]
