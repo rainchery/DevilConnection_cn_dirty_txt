@@ -297,7 +297,7 @@
 [playse  volume="100"  time="0"  buf="4"  storage="paku.ogg"  ]
 [tb_start_text mode=1 ]
 #德比伦
-[font size=75ぱくっ[resetfont][p]
+[font size=75]啊呜[resetfont][p]
 
 [_tb_end_text]
 

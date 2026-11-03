@@ -244,6 +244,7 @@
 [font_chara name="⑨" face="kowai"]
 [font_chara name="ネオでびるん" face="kowai"]
 [font_chara name="NEO德比伦" face="kowai"]
+[font_chara name="②" face="KaiseiDecol-Bold"]
 
 ;タップエフェクト
 [plugin name=tap_effect]
@@ -287,6 +288,7 @@
 [loadjs storage="collection.js"]
 [loadjs storage="sticker.js"]
 [loadjs storage="omake.js"]
+[loadjs storage="omake_ex.js"]
 
 ;初期変数を格納する
 [eval exp="sf.initialVars=f"]

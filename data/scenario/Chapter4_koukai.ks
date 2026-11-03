@@ -241,7 +241,7 @@
 [camera  time="10"  zoom="1.1"  wait="true"  layer="base"  ]
 [tb_start_text mode=1 ]
 #⑨
-[font size=50]……厌恶至极。[resetfont][p]
+[font size=50]我最讨厌你了。[resetfont][p]
 
 
 
@@ -253,14 +253,14 @@
 [reset_camera  time="10000"  wait="false"  layer="base"  ease_type="ease"  ]
 [tb_start_text mode=1 ]
 #⑨
-和你这种家伙待在一起，[r]
-会拉低我的身份。[p]
+再与像你这种无能之辈待在一起，[r]
+我的身份也会因此下降[p]
 [_tb_end_text]
 
 [tb_start_text mode=1 ]
 #⑨
-终究不过是个三流货色，[r]
-像你这种废物，别再和我有所牵连！！[p]
+不过仅仅是下级恶魔罢了，像你这种废物，[r]
+别再和我有所牵连！！[p]
 [_tb_end_text]
 
 [playse  volume="100"  time="1000"  buf="5"  loop="true"  storage="suna.ogg"  ]

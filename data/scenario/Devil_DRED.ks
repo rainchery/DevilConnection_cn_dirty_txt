@@ -856,7 +856,7 @@ D・Red大人，除此之外，[r]
 
 [tb_start_text mode=1 ]
 #D・Red
-[quake_text][font size=50ななな、何だそれは！[r]ちょっ、そんなところッ・・・[resetfont][free_quake_text][wait time=300][p]
+[quake_text][font size=50]ななな、何だそれは！[r]ちょっ、そんなところッ・・・[resetfont][free_quake_text][wait time=300][p]
 
 
 [_tb_end_text]
@@ -935,7 +935,7 @@ D・Red大人，除此之外，[r]
 [tb_start_text mode=1 ]
 #D・Red
 [quake_text]那究竟是何物？[r]
-区区小狗子，竟也如此硕大。[resetfont][free_quake_text][wait time=300][p]
+区区小狗子，竟也如此硕大。[free_quake_text][wait time=300][p]
 
 
 [_tb_end_text]
