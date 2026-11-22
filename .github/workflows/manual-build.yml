@@ -1,0 +1,70 @@
+name: Manual Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      overwrite_existing_tag:
+        description: '覆盖同一批次 Tag 对应的现有 Release'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: release-${{ github.repository }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  validate-and-check:
+    runs-on: ubuntu-latest
+    outputs:
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Generate and verify release tag
+        id: release
+        env:
+          OVERWRITE_EXISTING_TAG: ${{ inputs.overwrite_existing_tag }}
+        run: |
+          set -euo pipefail
+
+          # 使用中国时区的日期，并附加提交短 SHA，避免同一天多次发布发生冲突。
+          RELEASE_DATE=$(TZ=Asia/Shanghai date +%F)
+          SHORT_SHA=$(git rev-parse --short=12 "$GITHUB_SHA")
+          TAG_NAME="$RELEASE_DATE-$SHORT_SHA"
+          git check-ref-format --allow-onelevel "$TAG_NAME"
+
+          set +e
+          git ls-remote --exit-code --refs origin "refs/tags/$TAG_NAME" > /dev/null
+          TAG_STATUS=$?
+          set -e
+
+          case "$TAG_STATUS" in
+            0)
+              if [ "$OVERWRITE_EXISTING_TAG" != "true" ]; then
+                echo "::error::Tag $TAG_NAME 已存在。如需覆盖此批次 Release，请启用 overwrite_existing_tag。"
+                exit 1
+              fi
+              echo "Tag $TAG_NAME 已存在，将覆盖其指向的提交和对应 Release。"
+              ;;
+            2)
+              echo "Tag $TAG_NAME 可用"
+              ;;
+            *)
+              echo "::error::无法检查远端 Tag $TAG_NAME"
+              exit "$TAG_STATUS"
+              ;;
+          esac
+
+          echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
+
+  call-build:
+    needs: validate-and-check
+    uses: ./.github/workflows/build-logic.yml
+    with:
+      tag_name: ${{ needs.validate-and-check.outputs.tag_name }}
+      overwrite_existing_tag: ${{ inputs.overwrite_existing_tag }}

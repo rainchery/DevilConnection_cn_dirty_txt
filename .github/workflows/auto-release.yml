@@ -1,0 +1,66 @@
+name: Auto Release
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'mods/**'
+
+concurrency:
+  group: release-${{ github.repository }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  prepare-release:
+    runs-on: ubuntu-latest
+    outputs:
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: actions/checkout@v7
+        with: { fetch-depth: 0 }
+
+      - name: Generate and check release tag
+        id: release
+        run: |
+          set -euo pipefail
+
+          if ! compgen -G 'mods/*/modloader.mod.json' > /dev/null; then
+            echo "::error::未找到模组元数据：期望路径为 mods/<模组目录>/modloader.mod.json"
+            exit 1
+          fi
+
+          # 使用中国时区日期；短 SHA 让同一天的不同提交拥有不同的全局 Tag。
+          RELEASE_DATE=$(TZ=Asia/Shanghai date +%F)
+          SHORT_SHA=$(git rev-parse --short=12 "$GITHUB_SHA")
+          TAG_NAME="$RELEASE_DATE-$SHORT_SHA"
+          git check-ref-format --allow-onelevel "$TAG_NAME"
+
+          # --exit-code 返回 0 表示精确匹配到 tag，2 表示 tag 不存在。
+          set +e
+          git ls-remote --exit-code --refs origin "refs/tags/$TAG_NAME" > /dev/null
+          TAG_STATUS=$?
+          set -e
+
+          case "$TAG_STATUS" in
+            0)
+              echo "Tag $TAG_NAME 已存在，跳过发布。"
+              exit 0
+              ;;
+            2)
+              ;;
+            *)
+              echo "::error::无法检查远端 Tag $TAG_NAME"
+              exit "$TAG_STATUS"
+              ;;
+          esac
+          echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
+
+  call-build:
+    needs: prepare-release
+    if: needs.prepare-release.outputs.tag_name != ''
+    uses: ./.github/workflows/build-logic.yml
+    with:
+      tag_name: ${{ needs.prepare-release.outputs.tag_name }}

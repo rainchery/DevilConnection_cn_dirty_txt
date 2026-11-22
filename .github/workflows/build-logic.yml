@@ -1,0 +1,190 @@
+name: Build Logic
+
+on:
+  workflow_call:
+    inputs:
+      tag_name:
+        required: true
+        type: string
+      overwrite_existing_tag:
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Verify or overwrite release tag
+        env:
+          TAG_NAME: ${{ inputs.tag_name }}
+          OVERWRITE_EXISTING_TAG: ${{ inputs.overwrite_existing_tag }}
+        run: |
+          set -euo pipefail
+          git check-ref-format --allow-onelevel "$TAG_NAME"
+
+          set +e
+          git ls-remote --exit-code --refs origin "refs/tags/$TAG_NAME" > /dev/null
+          TAG_STATUS=$?
+          set -e
+
+          case "$TAG_STATUS" in
+            0)
+              if [ "$OVERWRITE_EXISTING_TAG" != "true" ]; then
+                echo "::error::Tag $TAG_NAME 已存在。"
+                exit 1
+              fi
+              git tag --force "$TAG_NAME" "$GITHUB_SHA"
+              git push --force origin "refs/tags/$TAG_NAME"
+              ;;
+            2)
+              echo "Tag $TAG_NAME 不存在，将由 Release 创建。"
+              ;;
+            *)
+              echo "::error::无法检查远端 Tag $TAG_NAME"
+              exit "$TAG_STATUS"
+              ;;
+          esac
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 26.13.0
+
+      - name: Install asar
+        run: npm install --global @electron/asar@4.3.1
+
+      - name: Build all modules and generate release assets
+        env:
+          TAG_NAME: ${{ inputs.tag_name }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          ASSET_DIR="$RUNNER_TEMP/release-assets"
+          PLAN_FILE="$RUNNER_TEMP/release-plan.json"
+          UPDATE_JSON="$ASSET_DIR/update.json"
+          CHANGELOG_FILE="$RUNNER_TEMP/changelog.md"
+          CURRENT_COMMIT=$(git rev-parse HEAD)
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 --exclude="$TAG_NAME" "$CURRENT_COMMIT" 2>/dev/null || true)
+
+          rm -rf "$ASSET_DIR"
+          mkdir -p "$ASSET_DIR"
+          printf '[]' > "$PLAN_FILE"
+          : > "$CHANGELOG_FILE"
+
+          declare -A SEEN_IDS=()
+          MANIFESTS=(mods/*/modloader.mod.json)
+          if [ "${#MANIFESTS[@]}" -eq 0 ]; then
+            echo "::error::未找到模组元数据：期望路径为 mods/<模组目录>/modloader.mod.json"
+            exit 1
+          fi
+
+          for MANIFEST in "${MANIFESTS[@]}"; do
+            MODULE_DIR=${MANIFEST%/modloader.mod.json}
+            ID=$(jq -er '.id | strings | select(length > 0)' "$MANIFEST")
+            VERSION=$(jq -er '.version | strings | select(length > 0)' "$MANIFEST")
+
+            if ! [[ "$ID" =~ ^[A-Za-z0-9._-]+$ ]]; then
+              echo "::error file=$MANIFEST::id 必须只包含字母、数字、点、下划线或连字符：$ID"
+              exit 1
+            fi
+            if [[ -n "${SEEN_IDS[$ID]:-}" ]]; then
+              echo "::error file=$MANIFEST::重复的模组 id：$ID（已在 ${SEEN_IDS[$ID]} 中定义）"
+              exit 1
+            fi
+            SEEN_IDS[$ID]="$MANIFEST"
+
+            ASAR_FILE="$ASSET_DIR/$ID.asar"
+            asar pack "$MODULE_DIR" "$ASAR_FILE"
+            if [ ! -s "$ASAR_FILE" ]; then
+              echo "::error file=$MANIFEST::构建失败：$ASAR_FILE 不存在或为空"
+              exit 1
+            fi
+
+            SHA256=$(sha256sum "$ASAR_FILE" | awk '{print $1}')
+            if ! [[ "$SHA256" =~ ^[0-9a-f]{64}$ ]]; then
+              echo "::error file=$MANIFEST::无法计算有效的 SHA-256"
+              exit 1
+            fi
+
+            MODULE_CHANGELOG="$RUNNER_TEMP/$ID-changelog.md"
+            if [ -n "$PREVIOUS_TAG" ]; then
+              git log "$PREVIOUS_TAG..$CURRENT_COMMIT" \
+                --pretty=format:'%s' \
+                --no-merges \
+                --reverse \
+                -- "$MODULE_DIR" > "$MODULE_CHANGELOG"
+            else
+              git log "$CURRENT_COMMIT" \
+                --pretty=format:'%s' \
+                --no-merges \
+                --reverse \
+                -- "$MODULE_DIR" > "$MODULE_CHANGELOG"
+            fi
+            if [ ! -s "$MODULE_CHANGELOG" ]; then
+              echo '暂无更新' > "$MODULE_CHANGELOG"
+            fi
+
+            ASAR_URL="https://github.com/$REPOSITORY/releases/download/$TAG_NAME/$ID.asar"
+            ENTRY_FILE="$RUNNER_TEMP/$ID-update-entry.json"
+            jq --rawfile changelog "$MODULE_CHANGELOG" \
+              --arg id "$ID" \
+              --arg asarUrl "$ASAR_URL" \
+              --arg sha256 "$SHA256" \
+              'del(.update, .injections) + {id: $id, asarUrl: $asarUrl, sha256: $sha256, changelog: $changelog}' \
+              "$MANIFEST" > "$ENTRY_FILE"
+
+            jq -e --arg id "$ID" '
+              .id == $id
+              and ((.version | type) == "string")
+              and ((.sha256 | type) == "string")
+              and (.sha256 | test("^[0-9a-f]{64}$"))
+            ' "$ENTRY_FILE" > /dev/null
+
+            jq --slurpfile entry "$ENTRY_FILE" '. + $entry' "$PLAN_FILE" > "$PLAN_FILE.tmp"
+            mv "$PLAN_FILE.tmp" "$PLAN_FILE"
+
+            {
+              echo "## $ID $VERSION"
+              cat "$MODULE_CHANGELOG"
+              echo
+              echo
+            } >> "$CHANGELOG_FILE"
+          done
+
+          jq -e '
+            type == "array"
+            and length > 0
+            and (([.[].id] | unique | length) == ([.[].id] | length))
+          ' "$PLAN_FILE" > /dev/null
+          jq '.' "$PLAN_FILE" > "$UPDATE_JSON"
+
+          echo "ASSET_DIR=$ASSET_DIR" >> "$GITHUB_ENV"
+          echo "UPDATE_JSON=$UPDATE_JSON" >> "$GITHUB_ENV"
+          echo "CHANGELOG_FILE=$CHANGELOG_FILE" >> "$GITHUB_ENV"
+          echo "构建完成：$(jq 'length' "$PLAN_FILE") 个模组"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ inputs.tag_name }}
+          target_commitish: ${{ github.sha }}
+          name: ${{ inputs.tag_name }}
+          body_path: ${{ env.CHANGELOG_FILE }}
+          make_latest: true
+          overwrite_files: true
+          fail_on_unmatched_files: true
+          files: |
+            ${{ env.ASSET_DIR }}/*.asar
+            ${{ env.UPDATE_JSON }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
