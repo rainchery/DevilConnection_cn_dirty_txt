@@ -1,0 +1,34 @@
+{
+    "scenario": {
+        "雨、": "",
+        "上がりましたね。": "",
+        "え、えぇと、気を取り直して・・・": "",
+        "さんこんばんは": "",
+        "何かワタクシがお力になれることはありますか？": ""
+    },
+    "script": {
+        "// 基本デッキ": "",
+        "// 1周目": "",
+        "if (f.currentLoop == 1)": "",
+        "tf.ohaLabels = ['*munagura', '*haku', '*zyagan', '*dekakupya']": "",
+        "// 名前わかった": "",
+        "else if (f.bel_name > 0 || f.bel_name_first > 0) tf.ohaLabels = ['*utu', '*ki', '*haku2', '*eye']": "",
+        "// 名前わからない＋2周目": "",
+        "else if (f.currentLoop == 2) tf.ohaLabels = ['*munagura2', '*haku', '*zyagan', '*dekakupya']": "",
+        "// 名前わからない＋3周目以降": "",
+        "else if (f.currentLoop >= 2) {": "",
+        "tf.ohaLabels = ['*munagura3', '*hokanokata', '*haku', '*zyagan', '*dekakupya']": "",
+        "if (f.currentLoop >= 10) tf.ohaLabels.push('*loop10')": "",
+        "else if (f.currentLoop >= 5) tf.ohaLabels.push('*loop5')": "",
+        "}": "",
+        "tf.label = tf.ohaLabels[f.ohaIdx]": "",
+        "!tf.label && (tf.label = '*owari')": ""
+    },
+    "tag": {
+        "tb_eval": {
+            "val": {
+                "2": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "scenario": {
+        "くぴゃあ～": "",
+        "さんこんばんはですぅ": "",
+        "何かワタクシがお力になれることはありますか？": ""
+    },
+    "script": {
+        "// 基本デッキ": "",
+        "// 1周目": "",
+        "if (f.currentLoop == 1)": "",
+        "tf.ohaLabels = ['*name_suteki', '*yokumosyoukan', '*otetudai']": "",
+        "// 名前わかった": "",
+        "else if (f.bel_name > 0 || f.bel_name_first > 0) tf.ohaLabels = ['*syo', '*kanousei', '*zyagan2']": "",
+        "// 名前わからない＋2周目": "",
+        "else if (f.currentLoop == 2) tf.ohaLabels = ['*re', '*name_sagashi', '*zyagan2']": "",
+        "// 名前わからない＋3周目以降": "",
+        "else if (f.currentLoop >= 2) tf.ohaLabels = ['*hitori', '*name_sagashi', '*zyagan2']": "",
+        "// 特殊条件デッキ": "",
+        "if (f.previousEnding == '27') tf.ohaLabels.push('*lord2')": "",
+        "else if (f.previousEnding == '28') tf.ohaLabels.push('*medama')": "",
+        "else if (f.previousEnding == '29') tf.ohaLabels.push('*wedding')": "",
+        "else if (f.previousEnding == '30') tf.ohaLabels.push('*BBB')": "",
+        "tf.label = tf.ohaLabels[f.ohaIdx]": "",
+        "!tf.label && (tf.label = '*owari')": ""
+    },
+    "tag": {}
+}

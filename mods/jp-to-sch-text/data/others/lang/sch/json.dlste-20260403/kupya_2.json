@@ -1,0 +1,26 @@
+{
+    "scenario": {
+        "くぴゃ～": "",
+        "さんこんにちはぁ": "",
+        "何かワタクシがお力になれることはありますか？": ""
+    },
+    "script": {
+        "// 基本デッキ": "",
+        "// 1周目": "",
+        "if (f.currentLoop == 1) tf.ohaLabels = ['*raspberry', '*hon', '*makiko']": "",
+        "// 名前わかった": "",
+        "else if (f.bel_name > 0 || f.bel_name_first > 0)": "",
+        "tf.ohaLabels = ['*munagura4', '*pie', '*tenshi']": "",
+        "// 名前わからない＋2周目": "",
+        "else if (f.currentLoop == 2) tf.ohaLabels = ['*blueberry', '*hon', '*makiko2', '*tenshi']": "",
+        "// 名前わからない＋3周目以降": "",
+        "else if (f.currentLoop >= 2) tf.ohaLabels = ['*pie', '*hon', '*makiko2', '*tenshi']": "",
+        "if (f.currentLoop >= 2) {": "",
+        "if (f.past_name != f.name) tf.ohaLabels.push('*name')": "",
+        "if (f.past_sex != f.seibetu) tf.ohaLabels.push('*gender')": "",
+        "}": "",
+        "tf.label = tf.ohaLabels[f.ohaIdx]": "",
+        "!tf.label && (tf.label = '*owari')": ""
+    },
+    "tag": {}
+}

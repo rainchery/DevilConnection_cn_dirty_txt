@@ -1,0 +1,23 @@
+{
+    "scenario": {},
+    "script": {
+        "if(f.omake && !sf.omakes.includes(f.omake)) {": "",
+        "sf.omakes = [...sf.omakes, f.omake].filter(n => !!n)": "",
+        "}": "",
+        "sf.showAutoSaveTutorial = 1": "",
+        "sf.loadAutoSaveTutorial = 1": ""
+    },
+    "tag": {
+        "ptext": {
+            "text": {
+                "&`END${f.omake}`": ""
+            }
+        },
+        "glink": {
+            "text": {
+                "ロードする": "读取存档",
+                "タイトルへ戻る": "返回标题"
+            }
+        }
+    }
+}

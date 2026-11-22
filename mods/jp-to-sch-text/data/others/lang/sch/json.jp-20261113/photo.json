@@ -1,0 +1,51 @@
+{
+    "scenario": {},
+    "script": {
+        "$.alert($.lang('album_full')):T1": "",
+        "const layers = [...$('.layer_camera').not('[style*=\"display: none\"]')]": "",
+        "const matrixes = layers.map(e => $(e).css('transform').match(/matrix\\(([0-9.]+),.*/)).filter(m => m)": "",
+        "tf.zoomEnable = matrixes.length == 0 || matrixes.every(m => Number(m[1]) == 1)": "",
+        "// => {base: '1.3', 0: '1.5', ...}": "",
+        "tf.forceExcludeDevi = $('.でびるん,.サブでび,.成体でびるん,.ウエディングでびるん,.寝る,.でび縛り,.ベルレヴィ').length > 0": "",
+        "const excludes = []": "",
+        "const types = dc.photoPoseTypes": "",
+        "// 1のときだけでびるんがいるポーズを除外": "",
+        "if (tf.forceExcludeDevi || f.photoDeviPose == 0) excludes.push(types.DEVI)": "",
+        "// 1のときだけカメラ固定じゃないポーズを除外": "",
+        "f.photoNonFixedPose == 0 && excludes.push(types.NON_FIXED_POSE)": "",
+        "tf.poses = dc.photoPoses(excludes)": "",
+        "tf.effects = dc.photoEffects()": "",
+        "tf.poseIdx = 0": "",
+        "tf.effectIdx = 0": "",
+        "tf.zoomLv = 0": "",
+        "tf.displayAura = true": "",
+        "const offsetBgs = ['haikei2', 'haikei_mp', 'haikei_stop', 'haikei_black']": "",
+        "tf.poseOffsetY = offsetBgs.some(bg => TYRANO.kag.layer.getLayer('base').css('background-image').includes(bg)) ? 130 : 0": "",
+        "const targets = dc.collectionCharaNames('character').map(c => '.' + c).join(',')": "",
+        "let chara = TYRANO.kag.layer.getLayer('0').find(targets)": "",
+        "tf.zoomx = chara.length > 0 ? Number(chara.css('left').replace('px', '')) + chara.width() / 2 - 640 : 0": "",
+        "tf.zoomy = chara.length > 0 ? (Number(chara.css('top').replace('px', '')) + chara.height() / 2 - 480) * -1 : 0": "",
+        "$('.zoom_btn').css('background-image', `url('data/image/toumei.png')`)": "",
+        "$(`.zoom_btn.z${tf.zoomLv}`).css('background-image', `url('data/image/menu/op2.png')`)": "",
+        "TYRANO.kag.layer.getLayer('0').find('[class*=\"感情オーラ\"]').css('visibility', tf.displayAura ? '' : 'hidden')": "",
+        "$('.aura_btn').css('background-image', `url('data/image/photo/${tf.displayAura ? \"on\" : \"off\"}.png')`)": "",
+        "$.alert($.lang('album_full')):T2": "",
+        "tf.flag_back=$(\".message1_fore\").css(\"display\")": "",
+        "f.backFromConfig = true": ""
+    },
+    "tag": {
+        "ptext": {
+            "text": {
+                "&tf.poseIdx||'なし'": "&tf.poseIdx||'无'",
+                "&tf.effects[tf.effectIdx].name||'なし'": "&tf.effects[tf.effectIdx].name||'无'",
+                "この写真をアルバムに保存する？": "要把这张照片保存到相册中吗？"
+            }
+        },
+        "glink": {
+            "text": {
+                "する": "是",
+                "しない": "否"
+            }
+        }
+    }
+}

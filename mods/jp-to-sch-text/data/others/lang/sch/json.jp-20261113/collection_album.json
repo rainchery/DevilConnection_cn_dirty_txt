@@ -1,0 +1,72 @@
+{
+    "scenario": {},
+    "script": {
+        "tf.start = sf.albumPageNo * 12  // 最初の写真番号": "",
+        "tf.idx = 0  // 現在のページの何番目か（写真番号ではなく、ページ内の順番）": "",
+        "tf.xs = [63, 342, 679, 958]": "",
+        "tf.ys = [96, 359, 622]": "",
+        "tf.ids = dc.getPhotoIds(tf.start, 12) // 最初の写真番号から12コ:T1": "",
+        "tf.page = sf.albumPageNo": "",
+        "tf.pages = Math.ceil(dc.getPhotoIds().length / 12):T1": "",
+        "tf.photoHeight = 188": "",
+        "tf.x = tf.xs[Math.trunc((tf.idx/3)%4)]": "",
+        "tf.y = tf.ys[Math.trunc(tf.idx%3)]": "",
+        "tf.id = tf.ids[tf.idx].id": "",
+        "tf.date = tf.ids[tf.idx].date": "",
+        "tf.url = dc.getPhotoThumb(tf.id)": "",
+        "if (tf.url == null) {": "",
+        "dc.deletePhoto(tf.id)": "",
+        "tf.ids = dc.getPhotoIds(tf.start, 12) // 最初の写真番号から12コ:T2": "",
+        "}:T1": "",
+        "tf.start = tf.page * 12:T1": "",
+        "tf.idx = 0": "",
+        "tf.ids = dc.getPhotoIds(tf.start, 12):T1": "",
+        "sf.albumPageNo = tf.page:T1": "",
+        "TG.saveSystemVariable():T1": "",
+        "$('.button').appendTo(TYRANO.kag.layer.getLayer('1')):T1": "",
+        "tf.allIds = dc.getPhotoIds().map(id => id.id)": "",
+        "tf.viewNo = tf.allIds.indexOf(tf.selectedPhoto)": "",
+        "$('.waku.album,.button.view').not('.__glink_enterimg_tmp').animate({opacity: 1}, 400)": "",
+        "tf.viewNo == 0 && $('.button.view.prev').hide()": "",
+        "tf.viewNo >= tf.allIds.length - 1 && $('.button.view.next').hide()": "",
+        "tf.selectedPhoto = tf.allIds[tf.viewNo]": "",
+        "tf.viewNo == 0 ? $('.button.view.prev').hide() : $('.button.view.prev').show()": "",
+        "tf.viewNo >= tf.allIds.length - 1 ? $('.button.view.next').hide() : $('.button.view.next').show()": "",
+        "$.alert($.lang('album_full'))": "",
+        "$('.button').remove():T1": "",
+        "$('.waku.album,.ui').not('.__glink_enterimg_tmp').animate({opacity: 0}, 400, 'linear', function () {": "",
+        "$(this).remove()": "",
+        "})": "",
+        "$('.button').appendTo(TYRANO.kag.layer.getLayer('1')):T2": "",
+        "$('.waku.album').not('.__glink_enterimg_tmp').animate({opacity: 1}, 400)": "",
+        "dc.deletePhoto(tf.selectedPhoto)": "",
+        "tf.ids = dc.getPhotoIds(tf.start, 12):T2": "",
+        "tf.pages = Math.ceil(dc.getPhotoIds().length / 12):T2": "",
+        "// ページ内のフォトが無くなったら前ページに戻る": "",
+        "if (tf.ids.length == 0) {": "",
+        "tf.page = Math.max(--tf.page, 0)": "",
+        "sf.albumPageNo = tf.page:T2": "",
+        "TG.saveSystemVariable():T2": "",
+        "tf.start = tf.page * 12:T2": "",
+        "tf.ids = dc.getPhotoIds(tf.start, 12):T3": "",
+        "}:T2": "",
+        "$('.button').remove():T2": "",
+        "TYRANO.kag.layer.getFreeLayer().show()": "",
+        "$('.button').appendTo(TYRANO.kag.layer.getFreeLayer())": ""
+    },
+    "tag": {
+        "ptext": {
+            "text": {
+                "&tf.date": "",
+                "この写真をどうする？": "要怎么处理这张照片？",
+                "この写真を削除する？": "要删除这张照片吗？"
+            }
+        },
+        "glink": {
+            "text": {
+                "する": "是",
+                "しない": "否"
+            }
+        }
+    }
+}

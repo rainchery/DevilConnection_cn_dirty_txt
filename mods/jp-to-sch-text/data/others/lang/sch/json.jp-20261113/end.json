@@ -1,0 +1,41 @@
+{
+    "scenario": {},
+    "script": {
+        "tf.endData = dc.end(tf.end)": "",
+        "$('.ending').css({": "",
+        "opacity: 1,": "",
+        "transition: 'opacity .5s'": "",
+        "});": ""
+    },
+    "tag": {
+        "glink": {
+            "text": {
+                "続ける": "继续",
+                "ロードする": "读取存档",
+                "オマケを見る": "观看花絮"
+            }
+        },
+        "collect_ending": {
+            "no": {
+                "&tf.end": ""
+            }
+        },
+        "memory": {
+            "val": {
+                "1": ""
+            }
+        },
+        "mtext": {
+            "text": {
+                "&`END${tf.end}&nbsp;${tf.endData.title}`": "",
+                "&`${dc.endCount()}/${dc.totalEndings()}`": "",
+                "&`${dc.characterCount()}/${dc.totalCharacters()}`": ""
+            }
+        },
+        "tb_ptext_show": {
+            "text": {
+                "&tf.endData.phrase": ""
+            }
+        }
+    }
+}

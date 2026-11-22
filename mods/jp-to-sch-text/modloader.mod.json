@@ -1,0 +1,41 @@
+{
+  "id": "jp-to-sch-text",
+  "name": "古今狐白日语社 - 汉化复兴",
+  "author": [
+    "古今狐白日语社",
+	"rainchery",
+	"逍婉瑶"
+  ],
+  "description": "本项目与官方及“古今狐白日语社”汉化组无关。\n属于基于汉化版的三次开发补丁。\n必须在官方日语下使用。",
+  "version": "2026.11.19",
+  "update": {
+    "source": "github",
+    "repo": "shouennyou/DevilConnection_cn_dirty_txt"
+  },
+  "depends": {
+    "devilconnection-modloader": ">=1.9.3",
+    "modloader-api": ">=0.6.5",
+    "shared-md-alert": ">=1.3.0"
+  },
+  "breaks": {
+    "zh-cn-text": "*"
+  },
+  "injections": [
+    {
+      "name": "启动jp2sch",
+      "path": "assets/jp-to-sch-text/language.js"
+    },
+    {
+      "name": "加载场景规则",
+      "path": "assets/jp-to-sch-text/scenario-loader.js"
+    },
+    {
+      "name": "选项日志汉化",
+      "path": "assets/jp-to-sch-text/glink-log-zh-cn.js"
+    },
+    {
+      "name": "汉化说明弹窗",
+      "path": "assets/jp-to-sch-text/readme-alert.js"
+    }
+  ]
+}

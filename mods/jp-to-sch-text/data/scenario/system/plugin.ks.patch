@@ -1,0 +1,16 @@
+# patch-config: {"matchThreshold":0.2,"deleteThreshold":0.2}
+Index: plugin.ks
+===================================================================
+--- plugin.ks
++++ plugin.ks
+@@ -188,9 +188,9 @@
+ [load_title_loop]
+ [lwaitload]
+ 
+ ;テストデータ
+-[eval exp="f.name='召喚士'"]
++[eval exp="f.name='召唤师'"]
+ [eval exp="f.seibetu=1"]
+ [if exp="!f.finished"]
+ [eval exp="f.finished=[]"]
+ [eval exp="TYRANO.kag.tmp.escInTitle=false"]

@@ -1,0 +1,53 @@
+{
+    "scenario": {},
+    "script": {
+        "tf.categories = dc.collectionCharaCategoryNames()": "",
+        "tf.categoryIndex = 0": "",
+        "tf.chIndex = 0:T1": "",
+        "tf.category = dc.collectionCharaCategory(tf.categories[tf.categoryIndex])": "",
+        "tf.category=dc.collectionCharaCategory(tf.categories[tf.categoryIndex])": "",
+        "tf.chIndex = 0:T2": "",
+        "$('.collection_label.category').html(tf.categories.length==1 ? 'キャラクター' : tf.category.text)": "$('.collection_label.category').html(tf.categories.length==1 ? '角色档案' : tf.category.text)",
+        "tf.names = dc.collectionCharaNames(tf.category.name)": "",
+        "tf.ch = tf.names[tf.chIndex]": "",
+        "tf.co = sf.collectedCharacters.includes(tf.ch) ? dc.collectionChara(tf.ch) : null": "",
+        "tf.displaying &&": "",
+        "$(`[data-no=\"${tf.displaying}\"]`).append(": "",
+        "$('<img>'):T1": "",
+        ".attr('src', `data/image/collection_chara/icon_/${tf.curr_co.category}/${tf.curr_co.no}.png`):T1": "",
+        ".css({ width: '100%', height: '100%' }):T1": "",
+        "):T1": "",
+        "$(`[data-no=\"${tf.displaying}\"]`).find('img').remove()": "",
+        "$('.collection_image').remove()": "",
+        "tf.curr_co = dc.collectionChara(tf.selectedCharacter)": "",
+        "$(`[data-no=\"${tf.selectedCharacter}\"]`).append(": "",
+        "$('<img>'):T2": "",
+        ".attr('src', `data/image/collection_chara/icon_/${tf.curr_co.category}/${tf.curr_co.no}.png`):T2": "",
+        ".css({ width: '100%', height: '100%' }):T2": "",
+        "):T2": "",
+        "tf.img = 0": "",
+        "tf.displaying = tf.selectedCharacter": "",
+        "$('.collection_image').css('opacity', 1):T1": "",
+        "$('.collection_image').css('opacity', 1):T2": ""
+    },
+    "tag": {
+        "collection_paging": {
+            "no": {
+                "&tf.categoryIndex": ""
+            }
+        },
+        "collection_glink": {
+            "no": {
+                "&tf.ch": ""
+            }
+        },
+        "ptext": {
+            "text": {
+                "&tf.curr_co.name": "&`${tf.curr_co.schName||tf.curr_co.name}`",
+                "&`${tf.curr_co.displayName||tf.curr_co.name}`": "&`${tf.curr_co.schName||tf.curr_co.name}`",
+                "&tf.curr_co.breed": "",
+                "&tf.curr_co.description": ""
+            }
+        }
+    }
+}

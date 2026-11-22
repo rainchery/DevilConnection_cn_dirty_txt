@@ -1,0 +1,43 @@
+{
+    "scenario": {},
+    "script": {
+        "const layers = [...$('.layer_camera').not('[style*=\"display: none\"]')]": "",
+        "const matrixes = layers.map(e => $(e).css('transform').match(/matrix\\(([0-9.]+),.*/)).filter(m => m)": "",
+        "tf.zoomEnable = matrixes.length == 0 || matrixes.every(m => Number(m[1]) == 1)": "",
+        "// => {base: '1.3', 0: '1.5', ...}": "",
+        "tf.poses = f.ririka == 1 ? [] : dc.photoPoses()": "",
+        "tf.effects = f.ririka == 1 ? [] : dc.photoEffects()": "",
+        "tf.poseIdx = 0": "",
+        "tf.effectIdx = 0": "",
+        "tf.zoomLv = 0": "",
+        "tf.displayAura = true": "",
+        "tf.poseOffsetY = TYRANO.kag.layer.getLayer('base').css('background-image').includes('haikei2') ? 130 : 0": "",
+        "const targets = dc.collectionCharaNames('character').map(c => '.' + c).join(',')": "",
+        "let chara = TYRANO.kag.layer.getLayer('0').find(targets)": "",
+        "tf.zoomx = chara.length > 0 ? Number(chara.css('left').replace('px', '')) + chara.width() / 2 - 640 : 0": "",
+        "tf.zoomy = chara.length > 0 ? (Number(chara.css('top').replace('px', '')) + chara.height() / 2 - 480) * -1 : 0": "",
+        "$('.zoom_btn').css('background-image', `url('data/image/toumei.png')`)": "",
+        "$(`.zoom_btn.z${tf.zoomLv}`).css('background-image', `url('data/image/menu/op2.png')`)": "",
+        "TYRANO.kag.layer.getLayer('0').find('[class*=\"感情オーラ\"]').css('visibility', tf.displayAura ? '' : 'hidden')": "",
+        "$('.aura_btn').css('background-image', `url('data/image/photo/${tf.displayAura ? \"on\" : \"off\"}.png')`)": "",
+        "if (f.ririka == 2) {": "",
+        "f.ririkaSnapId = dc.savePhoto($('.snap_image').attr('src'), $('.snap_thumb').attr('src'), false)": "",
+        "f.poseTypes = dc.poseTypesOf(tf.poses[tf.poseIdx] || [])": "",
+        "}:T1": "",
+        "if (f.maki == 1) {": "",
+        "f.memberCount = 1 + (tf.poses[tf.poseIdx] || []).length": "",
+        "if (f.memberCount == 3) f.makiPhotoId = dc.savePhoto($('.snap_image').attr('src'), $('.snap_thumb').attr('src'), false)": "",
+        "}:T2": "",
+        "tf.flag_back=$(\".message1_fore\").css(\"display\")": "",
+        "f.backFromConfig = true": "",
+        "f.backToScenario = true": ""
+    },
+    "tag": {
+        "ptext": {
+            "text": {
+                "&tf.poseIdx||'なし'": "&tf.poseIdx||'无'",
+                "&tf.effects[tf.effectIdx].name||'なし'": "&tf.effects[tf.effectIdx].name||'无'"
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "scenario": {},
+    "script": {
+        "tf.categories = dc.endCategoryNames()": "",
+        "tf.categoryIndex = 0": "",
+        "tf.enIndex = 0:T1": "",
+        "tf.category = dc.endCategory(tf.categories[tf.categoryIndex]):T1": "",
+        "tf.category = dc.endCategory(tf.categories[tf.categoryIndex]):T2": "",
+        "tf.enIndex = 0:T2": "",
+        "$('.collection_label.category').text(tf.category.text)": "",
+        "tf.endKeys = dc.endKeys(tf.category.name)": "",
+        "tf.endKey = tf.endKeys[tf.enIndex]": "",
+        "tf.end = sf.collectedEndings.includes(tf.endKey) ? dc.end(tf.endKey) : null": "",
+        "tf.endName = tf.end ? `${tf.end.title}` : '？？？？？？？？？？'": "",
+        "$(`[data-no=\"${tf.displaying}\"]`).addClass('selected')": "",
+        "$(`[data-no=\"${tf.displaying}\"]`).removeClass('selected')": "",
+        "$(`[data-no=\"${tf.selectedEnding}\"]`).addClass('selected')": "",
+        "tf.curr_end = dc.end(tf.selectedEnding)": "",
+        "tf.endNo = tf.selectedEnding < 10 ? `0${tf.selectedEnding}` : tf.selectedEnding": "",
+        "tf.displaying = tf.selectedEnding": "",
+        "$('.collection_image').css('opacity', 1)": ""
+    },
+    "tag": {
+        "ptext": {
+            "text": {
+                "&tf.category.text": "",
+                "&`END…${tf.endNo}`": "",
+                "&tf.curr_end.title": "",
+                "&tf.curr_end.timing": "",
+                "&tf.curr_end.cond": ""
+            }
+        },
+        "collection_paging": {
+            "no": {
+                "&tf.categoryIndex": ""
+            }
+        },
+        "collection_glink": {
+            "text": {
+                "&tf.endName": ""
+            },
+            "no": {
+                "&tf.endKey": ""
+            }
+        }
+    }
+}
