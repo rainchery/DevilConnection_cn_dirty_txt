@@ -32,10 +32,8 @@ jobs:
             exit 1
           fi
 
-          # 使用中国时区日期；短 SHA 让同一天的不同提交拥有不同的全局 Tag。
-          RELEASE_DATE=$(TZ=Asia/Shanghai date +%F)
-          SHORT_SHA=$(git rev-parse --short=12 "$GITHUB_SHA")
-          TAG_NAME="$RELEASE_DATE-$SHORT_SHA"
+          # 使用中国时区生成秒级 Tag，例如 2026-11-22-143015。
+          TAG_NAME=$(TZ=Asia/Shanghai date +'%Y-%m-%d-%H%M%S')
           git check-ref-format --allow-onelevel "$TAG_NAME"
 
           # --exit-code 返回 0 表示精确匹配到 tag，2 表示 tag 不存在。
