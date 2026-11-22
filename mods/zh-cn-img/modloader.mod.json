@@ -1,0 +1,24 @@
+{
+  "id": "zh-cn-img",
+  "name": "简体中文-图片补丁",
+  "author": [
+    "古今狐白日语社",
+	"rainchery",
+	"逍婉瑶"
+  ],
+  "description": "古今狐白日语社 《恶魔连结》 汉化补丁 v1.01 三次修改版, 基于新版 ModLoader 优化.\n用于替换游戏内原始图片资源的汉化模组, 提供完整的本地化图片支持.",
+  "version": "2026.07.24",
+  "update": {
+    "source": "github",
+    "repo": "shouennyou/DevilConnection_cn_dirty_txt"
+  },
+  "depends": {
+    "shared-md-alert": ">=1.0.0"
+  },
+  "injections": [
+    {
+      "name": "免责声明",
+      "path": "./assets/zh-cn-img/hook.js"
+    }
+  ]
+}
