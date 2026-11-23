@@ -10,7 +10,7 @@
   "version": "2026.11.19",
   "update": {
     "source": "github",
-    "repo": "shouennyou/DevilConnection_cn_dirty_txt"
+    "repo": "rainchery/DevilConnection_cn_dirty_txt"
   },
   "depends": {
     "devilconnection-modloader": ">=1.9.3",

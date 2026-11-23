@@ -10,7 +10,7 @@
   "version": "2026.07.24",
   "update": {
     "source": "github",
-    "repo": "shouennyou/DevilConnection_cn_dirty_txt"
+    "repo": "rainchery/DevilConnection_cn_dirty_txt"
   },
   "depends": {
     "shared-md-alert": ">=1.0.0"
