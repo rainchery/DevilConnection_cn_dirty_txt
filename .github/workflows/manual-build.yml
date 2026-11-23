@@ -32,10 +32,8 @@ jobs:
         run: |
           set -euo pipefail
 
-          # 使用中国时区的日期，并附加提交短 SHA，避免同一天多次发布发生冲突。
-          RELEASE_DATE=$(TZ=Asia/Shanghai date +%F)
-          SHORT_SHA=$(git rev-parse --short=12 "$GITHUB_SHA")
-          TAG_NAME="$RELEASE_DATE-$SHORT_SHA"
+          # 使用中国时区生成秒级 Tag，例如 2026-11-22-143015。
+          TAG_NAME=$(TZ=Asia/Shanghai date +'%Y-%m-%d-%H%M%S')
           git check-ref-format --allow-onelevel "$TAG_NAME"
 
           set +e
