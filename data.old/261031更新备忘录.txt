@@ -1,0 +1,113 @@
+26年10月31_日版 和 26年4月1日日版 &民汉  代码差异
+（个人观点，仅供参考）
+
+scenario\system\_preview.ks 看不懂略 不涉及汉化
+
+scenario\system\message_window.ks 不涉及汉化，略
+line 7  marginr=145 -> 0
+
+
+scenario\Chapter4_koukai.ks (！文本更改）
+1周目死前回忆  纳扎尔文本更改（仅复制）
+Line 234、246、251，
+对应汉化line 244、256、262行；
+复制来源 scenario\Devil_nazar.ks
+Line 1022、1030、1035
+对应汉化line 1069、1077-1078、1083
+
+
+collection.ks 不涉及汉化
+line13 书架 库皮亚出现 随机1/100，添加 真结局 判断，疑似DLC预埋？
+
+collection_chara.ks
+加了空格 有民汉本地化函数勿动
+
+Devil_amoamo.ks
+line 239 替换主语‘我’
+
+Devil_debirun.ks
+L1192“预热” 错别字 几乎无区别
+
+
+Devil_DRED.ks （！未翻译
+line 810 第2个括号‘]’补全
+对应汉化 859行 没翻译
+
+ななな、何だそれは！[r]ちょっ、そんなところッ・・・
+什、那是什么！等等、那种地方……（deepseek翻译，为了防止我破坏 整体翻译风格，原日文不替换）
+
+line 881 code 对应汉化938行
+
+
+Devil_nazar.ks （已检查
+948行 code
+对应汉化990行 缺省
+
+
+kupya.ks
+line 793  f.wedding_kidoku != 1  运算符号 是改非
+对应汉化 858行
+
+loop_kupya_talk.ks 台词更改
+694行 
+对应汉化778行 同义词不动
+
+scenario_chieshika.ks
+line 707、750、
+764、777
+829、847
+去除‘/’
+
+对应汉化
+line 744、789、805、820、896
+
+
+chara/70\/c5.png  -> chara/70/c5.png
+
+
+scenario_minty.ks
+line 288 补括号‘]’
+对应汉化300行 没翻译
+拟声词 啊呜（吃薄荷蛋糕）
+
+scenario_Ruby.ks  （已检查未改
+412、427 525去除拟声词 哒呀
+ 
+对应汉化432、448、449、548行
+
+
+scenario\scene1.ks
+line 312 少）括号
+
+scenario\syoukan.ks
+line 638 删除[reset_camera  ...]
+
+scenario\syoukan_Devil.ks
+line 239-240
+删除[reset_camera  ...]
+
+tenkai.ks
+line 834 对应汉化895
+删除 延迟
+
+
+others\ending.js
+207-213 增加可读性
+
+line 420 逗号','缺失
+
+others\master_data.js
+line 197 去除换行
+198 -》197
+
+-------本次主要内容 1篇番外（绰号：面包篇
+others\omake.js 番外	
+line 422-426 增加 additionalNgSceneData 外挂番外
+
+增加文件 others\omake_ex.js 已汉化
+
+增加文件 scenario\omake_steam.ks 已汉化
+
+scenario\system\plugin.ks 
+line 159  新增name="②" face="KaiseiDecol-Bold"
+line 203 新增 loadjs omake_ex.js
